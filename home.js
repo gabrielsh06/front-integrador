@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (usuarioGuardado && displayNombre) {
         displayNombre.textContent = usuarioGuardado;
     } else if (!usuarioGuardado) {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     }
 
     const botones = document.querySelectorAll('.sidebar-button');
