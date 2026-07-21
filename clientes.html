@@ -1,0 +1,76 @@
+<section class="modulo-gestion-cust">
+    <div class="cust-header-flex">
+        <div class="cust-title-group">
+            <h2>Gestión de Clientes</h2>
+            <p>Listado y administración de clientes registrados</p>
+        </div>
+        <button class="btn-cust-add" popovertarget="modalRegistrarCust">+ Registrar Cliente</button>
+    </div>
+
+    <div class="cust-grid-info">
+        <div class="cust-card">
+            <span class="cust-card-label">Total Clientes</span>
+            <span class="cust-card-value" id="count-cust">0</span>
+        </div>
+    </div>
+
+    <div class="cust-table-wrapper">
+        <table class="cust-tabla-data">
+            <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre Completo</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody id="tbody-clientes"></tbody>
+        </table>
+    </div>
+
+    <div class="cust-pagination">
+        <button id="prevPageCust" class="btn-cust-action">Anterior</button>
+        <span id="pageDisplayCust">Página 1</span>
+        <button id="nextPageCust" class="btn-cust-action">Siguiente</button>
+    </div>
+
+    <div id="modalRegistrarCust" popover class="cust-modal-box">
+        <div class="cust-modal-wrapper">
+            <h3>Registrar Cliente</h3>
+            <form id="formRegistrarCust">
+                <div class="cust-form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="firstName" required>
+                </div>
+                <div class="cust-form-group">
+                    <label>Apellido</label>
+                    <input type="text" name="lastName" required>
+                </div>
+                <div class="cust-modal-actions">
+                    <button type="button" class="btn-cust-action close" popovertarget="modalRegistrarCust" popovertargetaction="hide">Cancelar</button>
+                    <button type="submit" class="btn-cust-add">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalEditarCust" popover class="cust-modal-box">
+        <div class="cust-modal-wrapper">
+            <h3>Editar Cliente</h3>
+            <form id="formEditarCust">
+                <input type="hidden" name="id">
+                <div class="cust-form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="firstName" required>
+                </div>
+                <div class="cust-form-group">
+                    <label>Apellido</label>
+                    <input type="text" name="lastName" required>
+                </div>
+                <div class="cust-modal-actions">
+                    <button type="button" class="btn-cust-action close" popovertarget="modalEditarCust" popovertargetaction="hide">Cancelar</button>
+                    <button type="submit" class="btn-cust-add">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

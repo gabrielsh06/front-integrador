@@ -1,0 +1,89 @@
+<section class="modulo-gestion-prov">
+    <div class="prov-header-flex">
+        <div class="prov-title-group">
+            <h2>Gestión de Proveedores</h2>
+            <p>Control de deudas y órdenes de suministro</p>
+        </div>
+        <button class="btn-prov-add" popovertarget="modalRegistrar">+ Registrar Proveedor</button>
+    </div>
+
+    <div class="prov-grid-info">
+        <div class="prov-card">
+            <span class="prov-card-label">Activos</span>
+            <span class="prov-card-value" id="count-prov">0</span>
+        </div>
+        <div class="prov-card">
+            <span class="prov-card-label">Deuda Total</span>
+            <span class="prov-card-value" id="sum-deuda">$0.00</span>
+        </div>
+    </div>
+
+    <div class="prov-table-wrapper">
+        <table class="prov-tabla-data">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha Orden</th>
+                <th>Estatus</th>
+                <th>Deuda</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody id="tbody-proveedores"></tbody>
+        </table>
+    </div>
+
+    <div class="prov-pagination">
+        <button id="prevPage" class="btn-action">Anterior</button>
+        <span id="pageDisplay">Página 1</span>
+        <button id="nextPage" class="btn-action">Siguiente</button>
+    </div>
+
+    <div id="modalRegistrar" popover class="prov-modal-box">
+        <div class="modal-content-wrapper">
+            <h3>Registrar Proveedor</h3>
+            <form id="formRegistrar">
+                <div class="prov-form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="supplierName" required>
+                </div>
+                <div class="modal-form-actions">
+                    <button type="button" class="btn-action" popovertarget="modalRegistrar" popovertargetaction="hide">Cancelar</button>
+                    <button type="submit" class="btn-prov-add">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalEditar" popover class="prov-modal-box">
+        <div class="modal-content-wrapper">
+            <h3>Editar Proveedor</h3>
+            <form id="formEditar">
+                <input type="hidden" name="id">
+                <div class="prov-form-group">
+                    <label>Nombre del Proveedor</label>
+                    <input type="text" name="supplierName" required>
+                </div>
+                <div class="prov-form-group">
+                    <label>Fecha del Último Pedido</label>
+                    <input type="date" name="dateLastOrder">
+                </div>
+                <div class="prov-form-group">
+                    <label>Estatus de Pago</label>
+                    <select name="paymentStatus">
+                        <option value="PENDING">PENDING</option>
+                        <option value="PAID">PAID</option>
+                    </select>
+                </div>
+                <div class="prov-form-group">
+                    <label>Deuda ($)</label>
+                    <input type="number" step="0.01" name="debt">
+                </div>
+                <div class="modal-form-actions">
+                    <button type="button" class="btn-action" popovertarget="modalEditar" popovertargetaction="hide">Cancelar</button>
+                    <button type="submit" class="btn-prov-add">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

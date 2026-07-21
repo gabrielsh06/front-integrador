@@ -1,0 +1,185 @@
+<section class="modulo-gestion-inv">
+    <div class="inv-header-flex">
+        <div class="inv-title-group">
+            <h2>Inventario de Productos</h2>
+            <p>Control de stock, precios y proveedores</p>
+        </div>
+
+        <div class="inv-search-container">
+            <input
+                type="text"
+                id="inputSearchInv"
+                placeholder="Buscar por código o nombre..."
+            />
+            <button id="btnSearchInv" class="btn-inv-action search">
+                Buscar
+            </button>
+        </div>
+
+        <button class="btn-inv-add" popovertarget="modalRegistrarInv">
+            + Nuevo Producto
+        </button>
+    </div>
+
+    <div class="inv-grid-info">
+        <div class="inv-card">
+            <span class="inv-card-label">Productos en Sistema</span>
+            <span class="inv-card-value" id="count-inv">0</span>
+        </div>
+    </div>
+
+    <div class="inv-table-wrapper">
+        <table class="inv-tabla-data">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Producto</th>
+                    <th>Categoría</th>
+                    <th>P. Compra</th>
+                    <th>P. Venta</th>
+                    <th>Stock</th>
+                    <th>Proveedor</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tbody-inventario"></tbody>
+        </table>
+    </div>
+
+    <div class="inv-pagination">
+        <button id="prevPageInv" class="btn-inv-action">Anterior</button>
+        <span id="pageDisplayInv">Página 1</span>
+        <button id="nextPageInv" class="btn-inv-action">Siguiente</button>
+    </div>
+
+    <div id="modalRegistrarInv" popover class="inv-modal-box">
+        <div class="inv-modal-wrapper">
+            <h3>Registrar Producto</h3>
+            <form id="formRegistrarInv">
+                <div class="inv-form-row">
+                    <div class="inv-form-group">
+                        <label>Nombre</label>
+                        <input type="text" name="name" required />
+                    </div>
+                    <div class="inv-form-group">
+                        <label>Categoría</label>
+                        <input type="text" name="category" required />
+                    </div>
+                </div>
+                <div class="inv-form-row">
+                    <div class="inv-form-group">
+                        <label>Precio Compra</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="purchasePrice"
+                            required
+                        />
+                    </div>
+                    <div class="inv-form-group">
+                        <label>Precio Venta</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="salePrice"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="inv-form-row">
+                    <div class="inv-form-group">
+                        <label>Stock Inicial</label>
+                        <input type="number" name="stock" required />
+                    </div>
+                    <div class="inv-form-group">
+                        <label>Proveedor</label>
+                        <select
+                            name="supplierId"
+                            class="select-suppliers"
+                            required
+                        >
+                            <option value="">Seleccione proveedor</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="inv-modal-actions">
+                    <button
+                        type="button"
+                        class="btn-inv-action close"
+                        popovertarget="modalRegistrarInv"
+                        popovertargetaction="hide"
+                    >
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-inv-add">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalEditarInv" popover class="inv-modal-box">
+        <div class="inv-modal-wrapper">
+            <h3>Editar Producto</h3>
+            <form id="formEditarInv">
+                <input type="hidden" name="id" />
+                <div class="inv-form-row">
+                    <div class="inv-form-group">
+                        <label>Nombre</label>
+                        <input type="text" name="name" required />
+                    </div>
+                    <div class="inv-form-group">
+                        <label>Categoría</label>
+                        <input type="text" name="category" required />
+                    </div>
+                </div>
+                <div class="inv-form-row">
+                    <div class="inv-form-group">
+                        <label>Precio Compra</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="purchasePrice"
+                            required
+                        />
+                    </div>
+                    <div class="inv-form-group">
+                        <label>Precio Venta</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="salePrice"
+                            required
+                        />
+                    </div>
+                </div>
+                <div class="inv-form-row">
+                    <div class="inv-form-group">
+                        <label>Stock</label>
+                        <input type="number" name="stock" required />
+                    </div>
+                    <div class="inv-form-group">
+                        <label>Proveedor</label>
+                        <select
+                            name="supplierId"
+                            class="select-suppliers"
+                            required
+                        ></select>
+                    </div>
+                </div>
+                <div class="inv-modal-actions">
+                    <button
+                        type="button"
+                        class="btn-inv-action close"
+                        popovertarget="modalEditarInv"
+                        popovertargetaction="hide"
+                    >
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-inv-add">
+                        Guardar Cambios
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

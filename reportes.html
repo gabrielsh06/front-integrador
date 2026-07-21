@@ -1,0 +1,43 @@
+<header class="reporte-header">
+    <div>
+        <h2 style="margin:0;">Dashboard de Ventas</h2>
+        <small style="color: #95a5a6;">Estadísticas e Historial</small>
+    </div>
+</header>
+
+<!-- SECCIÓN 1: Tarjetas de Resumen -->
+<div class="resumen-cards">
+    <div class="card">
+        <h4>Total Ingresos</h4>
+        <p id="rep-total-venta">S/ 0.00</p>
+    </div>
+    <div class="card" style="border-left-color: #3498db;">
+        <h4>N° Ventas</h4>
+        <p id="rep-transacciones">0</p>
+    </div>
+    <div class="card" style="border-left-color: #f1c40f;">
+        <h4>Ticket Promedio</h4>
+        <p id="rep-ticket-promedio">S/ 0.00</p>
+    </div>
+</div>
+
+<!-- SECCIÓN 2: Tabla del Historial -->
+<div class="lista-productos">
+    <h3 style="font-size: 1.1rem; color: #34495e;">Historial Detallado de Ventas</h3>
+    <table class="tabla-productos">
+        <thead>
+        <tr>
+            <th>Nro. Venta</th>
+            <th>Fecha</th>
+            <th>Cliente</th>
+            <th>Productos (Cant.)</th>
+            <th>Total Venta</th>
+        </tr>
+        </thead>
+        <tbody id="rep-tbody-ventas">
+            <tr>
+                <td colspan="4" style="text-align: center;">Cargando datos...</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
